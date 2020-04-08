@@ -83,12 +83,14 @@ export default {
 .article {
   max-width: 70%;
   margin-left: 5%;
-  border-radius: 5px;
-  background: #fff;
 }
 .article section {
-  margin: 20px 0;
+  margin-bottom: 20px;
   padding: 10px 20px;
+  background: #fff;
+}
+.article .reply{
+  background: #fff;
 }
 .article .reply .title {
   font-size: 16px;
@@ -137,6 +139,7 @@ export default {
 .article .content .header {
   border-bottom: 1px solid lightgray;
   padding: 10px 20px;
+  background: #fff;
 }
 .article .content .header ul {
   display: flex;

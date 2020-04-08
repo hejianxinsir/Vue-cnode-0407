@@ -15,7 +15,9 @@
       </header>
       <ul>
         <li v-for="item in lists">
-          <img :src="item.author.avatar_url">
+          <router-link :to="{name: 'userinfo', params: {name: item.author.loginname}}">
+            <img :src="item.author.avatar_url">
+          </router-link>
           <span class="loginname">{{item.author.loginname}}</span>
           <span class="reply_count">{{item.reply_count}} /&nbsp</span>
           <span class="visit_count">{{item.visit_count}}</span>
@@ -26,7 +28,7 @@
           </span>
           <!-- 用 router 包裹 title -->
           <router-link :to="{name: 'post_content', params:{id:item.id, name: item.author.loginname}}">
-            <span>{{item.title}}</span>
+            <span class="item-title">{{item.title}}</span>
           </router-link>
           <span class="create_at">{{item.create_at | formatTime}}</span>
         </li>
@@ -81,14 +83,18 @@ export default {
   max-width: 70%;
   margin-left: 5%;
   font-size: 16px;
+  background: #fff;
 }
+
 .postlist div ul{
   padding: 20px;
 }
+.postlist div ul li a{    /*注意看 DOM 中给你自动生成的 a 标签，这是去掉router-link下划线的关键*/ 
+  text-decoration: none;
+}
 .postlist div ul li{
-  padding: 7px 0;
+  padding: 15px 0;
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 15px;
   display: flex;
   align-items: center;
 

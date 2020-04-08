@@ -1,6 +1,8 @@
 <template>
   <div class="header clearfix">
-    <img src="../assets/cnode.svg" width=138 height=35>
+    <router-link :to="{name: 'root'}">
+      <img src="../assets/cnode.svg" width=138 height=35>
+    </router-link>
     <input type="text" value="搜索">
     <ul>
       <li>首页</li>
