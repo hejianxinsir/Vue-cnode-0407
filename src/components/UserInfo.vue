@@ -26,7 +26,6 @@
           <router-link :to="{name: 'userinfo', params: {name: item.author.loginname}}">
             <img :src="item.author.avatar_url">
           </router-link>
-          <!-- 用 router 包裹 title -->
           <router-link :to="{name: 'post_content', params:{id:item.id, name: item.author.loginname}}">
             <span class="item-title">{{item.title}}</span>
           </router-link>
@@ -39,10 +38,9 @@
       <p class="header">最近参与的话题</p>
       <ul>
         <li v-for="item in jointopics">
-          <router-link :to="{name: 'userinfo', params: {name: item.author.loginname}}">
+          <router-link :to="{name: 'userinfo', params: {name: item.author.loginname, id: item.id}}">
             <img :src="item.author.avatar_url">
           </router-link>
-          <!-- 用 router 包裹 title -->
           <router-link :to="{name: 'post_content', params:{id:item.id, name: item.author.loginname}}">
             <span class="item-title">{{item.title}}</span>
           </router-link>
@@ -56,8 +54,13 @@
 
 
 <script>
+import Aside from './Aside'
+
 export default {
   name: 'UserInfo',
+  components: {
+    Aside
+  },
   data(){
     return {
       isLoading: false,
@@ -89,7 +92,7 @@ export default {
           console.log('createtopics')
           console.log(this.createtopics)
           console.log('jointopics')
-          console.log('this.jointopics')
+          console.log(this.jointopics)
           if(this.createtopics.length > 5){
             this.createtopics = this.createtopics.slice(0,5)
           }else{
@@ -115,6 +118,12 @@ export default {
   beforeMount(){
     this.isLoading = true
     this.getData()
+  },
+  // 检测路由的变化，这是犯过错的地方，牢牢记住！！！！！！！！！！！！！！！！！！！！！
+  watch: {
+    '$route'(to, from){
+        this.getData()
+    }
   }
 }
 </script>

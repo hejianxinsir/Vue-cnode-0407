@@ -2,6 +2,7 @@
   <div id="app">
     <Header/>
     <router-view name="main"></router-view>
+    <router-view name="aside"></router-view>
   </div>
 </template>
 
@@ -23,6 +24,9 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+body{
   background: #e1e1e1;
 }
 *{

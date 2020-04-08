@@ -27,8 +27,12 @@
         <ul>
           <li v-for="(reply,index) in replies">
             <div class="none-content">
-              <img :src="reply.author.avatar_url" />
-              <span class="loginname">{{reply.author.loginname}}</span>
+              <router-link :to="{name: 'userinfo', params: {name:reply.author.loginname}}">
+                <img :src="reply.author.avatar_url" />
+              </router-link>
+              <router-link :to="{name: 'userinfo', params: {name:reply.author.loginname}}">
+                <span class="loginname">{{reply.author.loginname}}</span>
+              </router-link>
               <span class="rank-floor">{{index + 1}}楼</span>
               <span>{{reply.create_at | formatTime}}</span>
             </div>
@@ -52,8 +56,9 @@ export default {
   },
   methods: {
     getData() {
+      let self = this
       this.$http
-        .get(`https://cnodejs.org/api/v1/topic/${this.$route.params.id}`)
+        .get(`https://cnodejs.org/api/v1/topic/${this.$route.params.id}`) 
         .then(res => {
           console.log("Article res");
           console.log(res);

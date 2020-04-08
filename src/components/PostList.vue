@@ -18,7 +18,9 @@
           <router-link :to="{name: 'userinfo', params: {name: item.author.loginname}}">
             <img :src="item.author.avatar_url">
           </router-link>
-          <span class="loginname">{{item.author.loginname}}</span>
+          <router-link :to="{name: 'userinfo', params: {name: item.author.loginname}}">
+            <span class="loginname">{{item.author.loginname}}</span>
+          </router-link>
           <span class="reply_count">{{item.reply_count}} /&nbsp</span>
           <span class="visit_count">{{item.visit_count}}</span>
           <!-- 标签 -->
