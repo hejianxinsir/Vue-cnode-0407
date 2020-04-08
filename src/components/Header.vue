@@ -4,7 +4,7 @@
     <input type="text" value="搜索">
     <ul>
       <li>首页</li>
-      <li>新手</li>
+      <li>新手入门</li>
       <li>API</li>
       <li>关于</li>
       <li>注册</li>
@@ -38,6 +38,7 @@ export default {
   align-items: center;
   position: relative;
   padding: 7px 0 9px 0;
+  margin-bottom: 30px;
 }
 .header img{
   margin-left: 60px;
