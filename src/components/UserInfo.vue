@@ -70,7 +70,12 @@ export default {
   methods: {
     getData(){
       // 用户信息
-      this.$http.get(`https://cnodejs.org/api/v1/user/${this.$route.params.name}`)
+      this.$http.get(`https://cnodejs.org/api/v1/user/${this.$route.params.name}`, {
+        params: {
+          page: 1,
+          limit: 5
+        }
+      })
         .then( res => {
           this.isLoading = false
           console.log('UserInfo res')
@@ -85,6 +90,14 @@ export default {
           console.log(this.createtopics)
           console.log('jointopics')
           console.log('this.jointopics')
+          if(this.createtopics.length > 5){
+            this.createtopics = this.createtopics.slice(0,5)
+          }else{
+
+          }
+          if(this.jointopics.length > 5){
+            this.jointopics = this.jointopics.slice(0,5)
+          }
         })
         .catch( err => console.log(err) )
 
