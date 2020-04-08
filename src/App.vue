@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <PostList/>
+    <router-view name="main"></router-view>
   </div>
 </template>
 
@@ -23,9 +23,11 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #e1e1e1;
 }
 *{
   margin: 0; padding: 0; list-style: none;
   box-sizing: border-box;
 }
+
 </style>

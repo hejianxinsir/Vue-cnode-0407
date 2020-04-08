@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import router from './router/index'
 
 import Axios from 'axios'
 Vue.prototype.$http = Axios;
@@ -11,8 +12,9 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   components: { 
-    App 
+    App
   },
   template: '<App/>'
 })
@@ -50,7 +52,7 @@ Vue.filter('tabFormatter', function(item){
   }else if(item.tab === 'ask'){
     return '问答'
   }else{
-    return '其他'
+    return '啊啊'
   }
 })
 

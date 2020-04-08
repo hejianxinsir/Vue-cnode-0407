@@ -25,7 +25,9 @@
             <span>{{ item | tabFormatter}}</span>
           </span>
           <!-- 用 router 包裹 title -->
-          <span>{{item.title}}</span>
+          <router-link :to="{name: 'post_content', params:{id:item.id, name: item.author.loginname}}">
+            <span>{{item.title}}</span>
+          </router-link>
           <span class="create_at">{{item.create_at | formatTime}}</span>
         </li>
       </ul>
