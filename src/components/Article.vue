@@ -78,6 +78,11 @@ export default {
   beforeMount() {
     this.isLoading = true;
     this.getData();
+  },
+  watch: {
+    '$route'(to, from){
+      this.getData()
+    }
   }
 };
 </script>

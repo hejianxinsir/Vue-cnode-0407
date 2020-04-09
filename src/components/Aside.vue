@@ -19,7 +19,7 @@
     <div class="otherTopic">
       <p class="header">作者的其他话题</p>
       <ul>
-        <li v-for="item in userInfo.recent_topics">
+        <li v-for="item in otherTopics">
           <router-link :to="{name: 'post_content',
             params: {id: item.id, name: item.author.loginname}}">
             {{item.title}}
@@ -57,6 +57,17 @@ export default {
           console.log(res.data.data)
         })
         .catch( err => console.log(err))
+    }
+  },
+  computed: {
+    otherTopics: function(){
+      let otherTopics = this.userInfo.recent_topics
+      if(otherTopics.length > 5){
+        otherTopics = otherTopics.slice(0,5)
+        return otherTopics
+      }else{
+        return otherTopics
+      }
     }
   },
   beforeMount(){
