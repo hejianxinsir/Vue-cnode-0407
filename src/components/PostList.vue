@@ -34,26 +34,34 @@
           </router-link>
           <span class="create_at">{{item.create_at | formatTime}}</span>
         </li>
+        <li>
+          <Pagination @xxx="yyy"/>
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from './Pagination';
 export default {
   name: "PostList",
   data() {
     return {
       isLoading: false,
-      lists: []
+      lists: [],
+      postPage: 1
     };
+  },
+  components: {
+    Pagination
   },
   methods: {
     getData() {
       this.$http
         .get("https://cnodejs.org/api/v1/topics", {
           params: {
-            page: 1,
+            page: this.postPage,
             limit: 15
           }
         })
@@ -68,11 +76,17 @@ export default {
           console.log(this.lists[0])
         })
         .catch( err => console.log(err) )
+    },
+    yyy(value){
+      console.log('renderList')
+      this.postPage = value
+      this.getData()
+      console.log(this.postPage)
     }
   },
   beforeMount() {
-    this.isLoading = true;
-    this.getData();
+    this.isLoading = true
+    this.getData()
   }
 }
 </script>
