@@ -6,8 +6,12 @@
     </div>
     <div v-else>
       <header>
-        <span>全部</span>
-        <span>精华</span>
+        <router-link :to="{name: 'root'}">
+          <span>全部</span>
+        </router-link>
+        <router-link :to="{name: 'goods'}">
+          <span>精华</span>
+        </router-link>
         <span>分享</span>
         <span>问答</span>
         <span>招聘</span>

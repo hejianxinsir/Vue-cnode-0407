@@ -49,6 +49,7 @@ export default {
 .header ul{
   position: absolute;
   right: 85px;
+  margin: 0;
 }
 .header ul li{
   display: inline-block;

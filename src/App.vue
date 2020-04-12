@@ -3,18 +3,21 @@
     <Header/>
     <router-view name="main"></router-view>
     <router-view name="aside"></router-view>
+    <Good/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import PostList from './components/PostList'
+import Good from './components/Good'
 
 export default {
   name: 'App',
   components: {
     Header,
-    PostList
+    PostList,
+    Good
   }
 }
 </script>

@@ -4,6 +4,7 @@ import PostList from '../components/PostList'
 import Router from 'vue-router'
 import UserInfo from '../components/UserInfo'
 import Aside from '../components/Aside'
+import Good from '../components/Good'
 
 Vue.use(Router)
 
@@ -14,6 +15,13 @@ export default new Router({
       path: '/',
       components: {
         main: PostList
+      }
+    },
+    {
+      name: 'goods',
+      path: '/goods',
+      component: {
+        main: Good
       }
     },
     {

@@ -90,7 +90,14 @@ export default {
 
 
 
-<style scoped>
+<style>
+@import url('../assets/github.css');
+body{
+  padding: 0;
+}
+ul,li{
+  margin: 0;
+}
 .article {
   max-width: 70%;
   margin-left: 5%;
