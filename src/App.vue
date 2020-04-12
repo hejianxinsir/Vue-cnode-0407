@@ -3,7 +3,7 @@
     <Header/>
     <router-view name="main"></router-view>
     <router-view name="aside"></router-view>
-    <Good/>
+    <!-- <Good/> -->
   </div>
 </template>
 

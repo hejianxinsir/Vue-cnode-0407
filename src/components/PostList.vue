@@ -7,7 +7,7 @@
     <div v-else>
       <header>
         <router-link :to="{name: 'root'}">
-          <span>全部</span>
+          <span class="all">全部</span>
         </router-link>
         <router-link :to="{name: 'goods'}">
           <span>精华</span>
@@ -162,7 +162,10 @@ export default {
   padding: 3px 5px;
 }
 
-.postlist header span:nth-child(1){
+.postlist header a{
+  text-decoration: none;
+}
+.postlist header span.all{
   background: #80bd01;
   color: #fff;
   border-radius: 3px;

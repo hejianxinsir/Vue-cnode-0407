@@ -177,14 +177,12 @@ export default {
   /* 最近创建主题相关 li*/ 
 .userinfo>.create_topic{
   font-size: 16px;
-  border: 1px solid lightgray;
   margin: 20px 0;
   background: #fff;
 }
 .userinfo>.topic_join{
   background: #fff;
   font-size: 16px;
-  border: 1px solid lightgray;
 }
 .userinfo ul {
   padding: 10px;

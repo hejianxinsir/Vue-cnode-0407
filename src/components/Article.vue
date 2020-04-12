@@ -92,9 +92,13 @@ export default {
 
 <style>
 @import url('../assets/github.css');
+
+/* @import url('../assets/markdown-github.css'); */
+
 body{
   padding: 0;
 }
+
 ul,li{
   margin: 0;
 }

@@ -20,7 +20,7 @@ export default new Router({
     {
       name: 'goods',
       path: '/goods',
-      component: {
+      components: {
         main: Good
       }
     },

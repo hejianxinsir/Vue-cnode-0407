@@ -62,7 +62,8 @@ export default {
   computed: {
     otherTopics: function(){
       let otherTopics = this.userInfo.recent_topics
-      if(otherTopics.length > 5){
+      if(otherTopics && otherTopics.length > 5){
+
         otherTopics = otherTopics.slice(0,5)
         return otherTopics
       }else{
@@ -126,6 +127,6 @@ export default {
 .aside .scanCode img{
   width: 200px; height: 200px;
   margin: 20px 0;
-  margin-left: 43px;
+  margin-left: calc(50% - 100px);
 }
 </style>
