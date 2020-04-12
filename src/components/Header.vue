@@ -5,7 +5,11 @@
     </router-link>
     <input type="text" value="搜索">
     <ul>
-      <li>首页</li>
+      <li>
+        <router-link :to="{name: 'root'}">
+          <span>首页</span>
+        </router-link>
+      </li>
       <li>新手入门</li>
       <li>API</li>
       <li>关于</li>
@@ -57,6 +61,10 @@ export default {
   font-size: 14px;
   margin: 0 15px;
   font-weight: bold;
+}
+.header ul li a{
+  text-decoration: none;
+  color: #ccc;
 }
 
 .header ul li:hover{
