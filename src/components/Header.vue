@@ -66,6 +66,9 @@ export default {
   text-decoration: none;
   color: #ccc;
 }
+.header ul li a:hover{
+  color: #fff;
+}
 
 .header ul li:hover{
   color: #fff;
